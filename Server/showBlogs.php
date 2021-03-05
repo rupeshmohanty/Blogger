@@ -12,11 +12,15 @@
    // get all projects!
    $getProjects = "SELECT * FROM `posts`";
    $getProjectsStatus = mysqli_query($conn,$getProjects) or die(mysqli_error($conn));
-   $getProjectsRow = mysqli_fetch_array($getProjectsStatus);
+   $getProjectsRow = array();
 
    if(mysqli_num_rows($getProjectsStatus) > 0) {
 
-        echo json_encode(["sent" => true, "posts" => $getProjectsRow]);
+        while($r = mysqli_fetch_assoc($getProjectsStatus)) {
+             $getProjectsRow[] = $r;
+        }
+
+        echo json_encode($getProjectsRow);
 
    } else {
    
