@@ -9,6 +9,7 @@ import RegisterComponent from './components/RegisterComponent';
 import LogoutComponent from './components/LogoutComponent';
 import ProfileComponent from './components/ProfileComponent';
 import PostComponent from './components/PostComponent';
+import BlogComponent from './components/BlogComponent';
 
 class App extends Component{
   render() {
@@ -30,6 +31,9 @@ class App extends Component{
             </Route>
             <Route path = "/create-a-blog">
               <PostComponent/>
+            </Route>
+            <Route path = "/blog/:id">
+              <BlogComponent/>
             </Route>
             <Route path = "/logout">
               <LogoutComponent/>

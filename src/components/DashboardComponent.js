@@ -101,6 +101,9 @@ class DashboardComponent extends Component{
                                                         <Item.Description>
                                                             { post.brief }
                                                         </Item.Description>
+                                                        <Link to = { '/blog/' + post.id }>
+                                                            See details
+                                                        </Link>
                                                     </Item.Content>
                                                 </Item>
                                             </Card.Content>
